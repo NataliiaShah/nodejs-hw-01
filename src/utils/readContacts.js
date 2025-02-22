@@ -1,10 +1,7 @@
 import fs from 'node:fs/promises';
-import path from 'node:path';
+import { PATH_DB } from '../constants/constants.js';
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-const PATH_DB = path.resolve(__dirname, '../db/db.json');
-
-async function readContacts() {
+export async function readContacts() {
     try {
         const data = await fs.readFile(PATH_DB, { encoding: 'utf-8' });
         const contacts = JSON.parse(data);
@@ -16,3 +13,4 @@ async function readContacts() {
 }
 
 readContacts();
+

@@ -1,8 +1,5 @@
 import fs from 'node:fs/promises';
-import path from 'node:path';
-
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-const PATH_DB = path.resolve(__dirname, '../db/db.json');
+import { PATH_DB } from '../constants/constants.js';
 
 export const removeLastContact = async () => {
     try {
@@ -13,7 +10,6 @@ export const removeLastContact = async () => {
         if (contacts.length > 0) {
             // Видаляємо останній контакт
             contacts.pop();
-
             // Записуємо оновлений масив в файл
             await fs.writeFile(PATH_DB, JSON.stringify(contacts, null, 2), 'utf-8');
             console.log('Останній контакт був видалений.');

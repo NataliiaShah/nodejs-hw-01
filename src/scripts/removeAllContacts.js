@@ -1,8 +1,5 @@
 import fs from 'node:fs/promises';
-import path from 'node:path';
-
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-const PATH_DB = path.resolve(__dirname, '../db/db.json');
+import { PATH_DB } from '../constants/constants.js';
 
 export const removeAllContacts = async () => {
     try {

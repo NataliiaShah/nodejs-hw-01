@@ -1,10 +1,7 @@
 import fs from 'node:fs/promises';
-import path from 'node:path';
+import { PATH_DB } from '../constants/constants.js';
 import { createFakeContact } from '../utils/createFakeContact.js';
-import writeContacts from "../utils/writeContacts.js";
-
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-const PATH_DB = path.resolve(__dirname, '../db/db.json');
+import writeContacts from '../utils/writeContacts.js';
 
 export const generateContacts = async (count) => {
     try {
@@ -20,6 +17,7 @@ export const generateContacts = async (count) => {
         // Додаємо нові контакти до існуючих
         contacts = [...contacts, ...newContacts];
 
+        // Записуємо оновлений масив контактів назад у файл
         await writeContacts(contacts);
         console.log(`${count} нових контактів було додано!`);
     } catch (error) {
