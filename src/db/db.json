@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "31332ec2-837f-44d7-a7fa-91645130a542",
+    "name": "Delores Streich",
+    "phone": "(890) 671-3130 x624",
+    "email": "Merle_Pfeffer@hotmail.com",
+    "job": "Forward Optimization Technician"
+  },
+  {
+    "id": "9345afb9-cc0c-4d86-9a54-fc04142d2b61",
+    "name": "Kent Keebler",
+    "phone": "(606) 464-5996 x3055",
+    "email": "Chadd41@yahoo.com",
+    "job": "Chief Solutions Manager"
+  }
+]
