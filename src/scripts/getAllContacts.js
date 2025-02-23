@@ -1,10 +1,8 @@
-import fs from 'node:fs/promises';
-import { PATH_DB } from '../constants/constants.js';
+import { readContacts } from '../utils/readContacts.js';
 
 export const getAllContacts = async () => {
     try {
-        const data = await fs.readFile(PATH_DB, 'utf-8');
-        const contacts = JSON.parse(data);
+        const contacts = await readContacts();
         console.log("Контакти зчитано успішно:", contacts);
         return contacts;
     } catch (error) {
